@@ -71,7 +71,7 @@ router.post('/', (req, res) => {
 router.post('/login', (req, res) => {
     User.findOne({
       where: {
-        email: req.body.email
+       username: req.body.username
       }
     }).then(dbUserData => {
       if (!dbUserData) {
@@ -135,7 +135,7 @@ router.delete('/:id', withAuth, (req, res) => {
       });
   });
 
-router.post('/logout', (req, res) => {
+router.post('/logout', withAuth, (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();

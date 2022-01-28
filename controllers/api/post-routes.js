@@ -3,7 +3,7 @@ const { Post, User, Comment } = require("../../models");
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Post.findAll({
       where: {
         user_id: req.session.user_id
@@ -76,7 +76,7 @@ router.get('/:id', (req, res) => {
       });
   });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     if (req.session) {
       Post.create({
         title: req.body.title,
