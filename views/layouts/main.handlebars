@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Techie Blog</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+ </head>
 
 <body>
   <div class="wrapper">
@@ -16,10 +16,10 @@
     </h1>
     <nav>
     {{#if loggedIn}}
-    <a href="/dashboard">dashboard</a>
-    <button id="logout" class="logout btn-no-style">logout</button>
+    <a class="navigation" href="/dashboard">Dashboard</a>
+    <button id="logout" class="logout navigation btn-no-style">LOGOUT</button>
     {{else}}
-    <a href="/login">login</a>
+    <a href="/login">LOGIN</a>
     {{/if}}
     </nav>
   </header>

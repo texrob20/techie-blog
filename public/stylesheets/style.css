@@ -1,6 +1,4 @@
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
   
@@ -8,19 +6,17 @@
     height: 100%;
     padding: 0;
     margin: 0;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: #333;
   }
   
   a {
-    text-decoration: none;
-    color: #225ca3;
-    font-weight: bold;
-    transition: color .1s;
+   color: white;
+   text-decoration: none;
   }
-  
+
   a:hover {
-    color: #3486eb;
+    color: yellow;
   }
   
   button {
@@ -76,16 +72,24 @@
     flex-direction: column;
   }
   
-  header {
-    border-bottom: 1px solid #ccc;
+  .wrapper header {
+    background-color: rgb(2, 34, 129);
+    border-bottom: 25px solid rgb(0, 59, 20);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1%;
+    padding: 0 5%;
+    
   }
   
-  header h1 {
-    font-size: 1em;
+  .wrapper header h1 {
+    font-size: 40px;
+    color: white;
+  }
+
+  .navigation {
+    font-size: 16px;
+    color: white;
   }
   
   main {
@@ -120,16 +124,26 @@
   }
   
   .post {
+    background-color: seagreen;
     margin-bottom: 2%;
     line-height: 150%;
   }
   
-  .post .title span {
-    font-style: italic;
+  .title {
+    background-color: slategrey;
+    padding-left: 2%;
+    font-weight: bold;
     font-size: 90%;
-    color: #7d7d7d;
+    color: seagreen;
   }
-  
+
+  .content {
+    font-style: italic;
+    font-size: 75%;
+    padding: 2%;
+    color: white;
+  }
+
   .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
@@ -148,9 +162,10 @@
     background-color: #fff5eb;
   }
   
-  .comment .meta {
-    font-size: 90%;
-    margin-bottom: .5%;
+  .meta {
+    font-size: 60%;
+    text-align: right;
+    margin:0 .5% .5% 0;
     opacity: .6;
   }
   
