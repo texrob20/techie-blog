@@ -1,6 +1,7 @@
 {{> post-info post }}
 
 {{#if loggedIn}}
+<a class="user">Created by {{user.username}}</a>
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
