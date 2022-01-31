@@ -90,6 +90,7 @@
   .navigation {
     font-size: 16px;
     color: white;
+    margin-right: 20px;
   }
   
   main {
@@ -130,11 +131,18 @@
   }
   
   .title {
+    display: flex;
     background-color: slategrey;
     padding-left: 2%;
     font-weight: bold;
     font-size: 90%;
     color: seagreen;
+    justify-content: space-between;
+  }
+
+  .created {
+    font-size: 70%;
+    padding-right: 2%;
   }
 
   .content {

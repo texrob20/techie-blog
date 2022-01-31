@@ -11,15 +11,15 @@
 <body>
   <div class="wrapper">
   <header>
-    <h1>
-      <a href="/">Techie Blog</a>
-    </h1>
+    <h1>Techie Blog:</h1>
     <nav>
-    {{#if loggedIn}}
+    <a class="navigation" href="/">Home</a>
     <a class="navigation" href="/dashboard">Dashboard</a>
+    {{#if loggedIn}}
     <button id="logout" class="logout navigation btn-no-style">LOGOUT</button>
     {{else}}
-    <a href="/login">LOGIN</a>
+    <a href="/login">LOGIN /</a>
+    <a href="/signup"> SIGN UP</a>
     {{/if}}
     </nav>
   </header>
