@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// retrieves all the user's posts to display on the dashboard page
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
       where: {
@@ -39,6 +40,7 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
+// retrieves user post so user can edit title or contents  
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findByPk(req.params.id, {
     attributes: [

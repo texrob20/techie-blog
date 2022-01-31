@@ -2,6 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
+// retrieves all posts and associated comments to display on homepage
 router.get('/', (req, res) => {
     console.log(req.session);
     Post.findAll({
@@ -40,6 +41,7 @@ router.get('/', (req, res) => {
       });
   });
 
+// directs user to login page if they are not logged in  
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -49,6 +51,7 @@ router.get('/login', (req, res) => {
     res.render('login');
   });  
 
+// directs the user to the sign up page when the user clicks on the sign up tab  
 router.get('/signup', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
@@ -58,6 +61,7 @@ router.get('/signup', (req, res) => {
     res.render('signup');
   });    
 
+// retrieves a single post and associated comments  
 router.get('/post/:id', (req, res) => {
     Post.findOne({
       where: {

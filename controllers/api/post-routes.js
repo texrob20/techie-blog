@@ -3,6 +3,7 @@ const { Post, User, Comment } = require("../../models");
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
+// retrieves all posts for a user when user is logged in
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
       where: {
@@ -37,6 +38,7 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
+// retrieves a single post with comments and user who submitted both post and comments
 router.get('/:id', (req, res) => {
     Post.findOne({
       where: {
@@ -76,6 +78,7 @@ router.get('/:id', (req, res) => {
       });
   });
 
+// creates a new post for users who are logged in
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
       Post.create({
@@ -91,7 +94,8 @@ router.post('/', withAuth, (req, res) => {
     }
   });
 
-router.put('/:id', (req, res) => {
+// updates a single post for user who is logged in 
+router.put('/:id', withAuth, (req, res) => {
     Post.update(
       {
         title: req.body.title,
@@ -116,6 +120,7 @@ router.put('/:id', (req, res) => {
       });
   });
 
+// deletes a post for user who is logged in  
 router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
       where: {

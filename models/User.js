@@ -3,11 +3,12 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
 class User extends Model {
-  checkPassword(loginPw) {
+  checkPassword(loginPw) {  //compares password to hash of stored password
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
+// creates user model
 User.init(
     {
       id: {
