@@ -56,6 +56,6 @@ The sign up page asks the user to create a username and password.  Once the user
 https://floating-reef-40192.herokuapp.com/
 
 ## Demo
-<img src=https://github.com/texrob20/techie-blog/blob/main/demo/hompage.png>
+<img src=https://github.com/texrob20/techie-blog/blob/main/demo/homepage.png>
 <img src=https://github.com/texrob20/techie-blog/blob/main/demo/Dashboard.png>
 <img src=https://github.com/texrob20/techie-blog/blob/main/demo/Edit_post.png>
