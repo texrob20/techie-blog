@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Post } = require("../../models");
 const withAuth = require('../../utils/auth');
 
-// shows all users but not password
+// shows all users but not password for /api/users
 router.get('/', (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] }
@@ -78,7 +78,7 @@ router.post('/login', (req, res) => {
       }
     }).then(dbUserData => {
       if (!dbUserData) {
-        res.status(400).json({ message: 'No user with that email address!' });
+        res.status(400).json({ message: 'No user with that username!' });
         return;
       }
   
@@ -98,6 +98,21 @@ router.post('/login', (req, res) => {
       });
     });
   });
+
+// retrieves user information to compare to input for user sign up 
+router.post('/signup', (req, res) => {
+  User.findOne({
+    where: {
+     username: req.body.username
+    }
+  }).then(dbUserData => {
+    if (!dbUserData) {
+      res.status(400).json({ message: 'Username not found' });
+      return;
+    }
+    res.json(dbUserData);
+  })
+});
 
 // updates user information  
 router.put('/:id', (req, res) => {
