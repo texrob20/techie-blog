@@ -49,7 +49,9 @@ The login page requires the user to provide a username and password to access th
 Users who are logged in will have the option to logout.  Logging out ends the session and prevents the user from adding or editing until they log back in.
 
 ### Sign Up
-The sign up page asks the user to create a username and password.  Once the user creates an account, they will be directed to login to begin submitting post and comments.
+The sign up page asks the user to create a username and password.  Once the user creates an account, they will be directed to login to begin submitting post and comments.  After a successful sign up the user will be directed to their dashboard to begin adding posts.
+
+The signup function checks for duplicate usernames and does not allow the user to create a username that is already in use.
 
 ## Deployed Application
 
