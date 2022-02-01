@@ -28,8 +28,8 @@ router.post('/', (req, res) => {
   }
 });
 
-// deletes a comment
-router.delete('/:id', (req, res) => {
+// deletes a comment *future function
+router.delete('/:id', withAuth, (req, res) => {
     Comment.destroy({
         where: {
           id: req.params.id
