@@ -172,9 +172,9 @@
   }
   
   .meta {
-    font-size: 60%;
+    font-size: 70%;
     text-align: right;
-    margin:0 .5% .5% 0;
+    margin:0 2% 2% 0;
     opacity: .6;
   }
   
@@ -191,5 +191,5 @@
     display: flex;
     justify-content: center;
     padding: 1%;
-    font-size: 110%;
+    font-size: 60%;
   }
